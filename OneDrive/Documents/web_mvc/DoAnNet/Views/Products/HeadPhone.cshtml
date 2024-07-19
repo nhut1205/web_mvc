@@ -1,0 +1,86 @@
+﻿@model IEnumerable<DoAnNet.Models.Product>
+
+@{
+    ViewBag.Title = "HeadPhone";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Homepage Template for Bootstrap</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!-- Add custom CSS here -->
+    <link href="~/Content/shop-homepage.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-9">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="~/Image/@item.Img" alt="">
+                                <div class="caption">
+
+                                    <h4>
+                                        <a href="#">@Html.DisplayFor(modelItem => item.Name)</a>
+                                    </h4>
+                                    <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                                    <p>@Html.DisplayFor(modelItem => item.Price)VND</p>
+                                </div>
+                                <div class="ratings">
+                                    <p class="pull-right">15 reviews</p>
+                                    <a href="#" class="btn btn-primary">@Html.ActionLink("Details", "Details", new { id = item.ProductId })</a>
+                                    <p>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- JavaScript -->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</body>
+
+</html>

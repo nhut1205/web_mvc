@@ -1,0 +1,21 @@
+﻿@model DoAnNet.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditProfile</h2>
+
+@using (Html.BeginForm("UpdateProfile", "TaiKhoans", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.TenHienThi)
+    @Html.EditorFor(model => model.TenHienThi)
+
+    @Html.LabelFor(model => model.MatKhau)
+    @Html.PasswordFor(model => model.MatKhau)
+
+    <input type="submit" value="Lưu thông tin" />
+}
+
+

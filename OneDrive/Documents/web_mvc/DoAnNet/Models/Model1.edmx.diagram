@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="15540b0ad2d2497082e4330989ce7b81" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="SmartphoneShopModel.Category" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartphoneShopModel.Contact" Width="1.5" PointX="7.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartphoneShopModel.OrderDetail" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartphoneShopModel.Order" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartphoneShopModel.Product" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartphoneShopModel.ShoppingCartItem" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartphoneShopModel.TaiKhoan" Width="1.5" PointX="8.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartphoneShopModel.Vendor" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="SmartphoneShopModel.FK_Products_Categories_CategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartphoneShopModel.FK_OrderDetails_Orders_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartphoneShopModel.FK_OrderDetails_Products_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartphoneShopModel.FK_Products_Vendors_VendorId" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartphoneShopModel.FK_ShoppingCartItems_Products_ProductId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

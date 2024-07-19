@@ -1,0 +1,190 @@
+﻿@model IEnumerable<DoAnNet.Models.Product>
+
+
+@{
+    ViewBag.Title = "showProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <!-- Optional Theme Stylesheet -->
+    <link href="~/Content/carousel.css" rel="stylesheet" />
+    <script src="~/Content/carousel.js"></script>
+    <link href="~/Content/news.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!---Main-->
+    <main id="main">
+        <!---------------------------------------------Latest Products------------------------------------------------------------------------------------->
+        <section class="section latest__products" id="" latest>
+            <div class="title__container">
+                <div class="section__title active" data-id="Latest Producs">
+                    <span class="dot"></span>
+                    <h1 class="primary__title">Latest Products</h1>
+                </div>
+            </div>
+            <!--------------------------------------------------------List Product------------------------------------------------------------------------->
+        </section>
+    </main>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="cards-wrapper">
+                    <div class="card-group">
+                        @foreach (var item in Model)
+                        {
+                            <div class="card">
+                                <img src="~/Image/@Html.DisplayFor(modelItem => item.Img)" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                                    <p class="card-text">@Html.DisplayFor(modelItem => item.Description).</p>
+                                    <a href="#" class="btn btn-primary">@Html.ActionLink("Details", "Details", new { id = item.ProductId })</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="cards-wrapper">
+                    <div class="card-group">
+                        @foreach (var item in Model)
+                        {
+                            <div class="card">
+                                <img src="~/Image/@Html.DisplayFor(modelItem => item.Img)" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                                    <p class="card-text">@Html.DisplayFor(modelItem => item.Description).</p>
+                                    <a href="#" class="btn btn-primary">@Html.ActionLink("Details", "Details", new { id = item.ProductId })</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!--------------------------------------------------------List Product------------------------------------------------------------------------->
+    <section class="category__section section" id="category">
+        <div class="tab__list">
+            <div class="title__container tabs">
+                <div class="section__titles category__titles">
+                    <div class="section__title filter-btn" data-id="">
+                        <h1 class="primary__title" style="margin-left : 50px">All Products</h1>
+                    </div>
+                </div>
+
+                <div class="section__titles category__titles">
+                    <div class="section__title filter-btn" data-id="">
+                        <h1 class="primary__title" style="margin-left : 50px">Samsung</h1>
+                    </div>
+                </div>
+
+                <div class="section__titles category__titles">
+                    <div class="section__title filter-btn" data-id="">
+                        <h1 class="primary__title" style="margin-left : 50px">Iphone</h1>
+                    </div>
+                </div>
+
+                <div class="section__titles category__titles">
+                    <div class="section__title filter-btn" data-id="">
+                        <h1 class="primary__title" style="margin-left : 50px"></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+<section class="light">
+    <div class="container py-2">
+        <div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
+
+        <article class="postcard light blue">
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title blue"><a href="#">FreeShip</a></h1>
+                <div class="postcard__subtitle small">
+                    <time datetime="2020-05-25 12:00:00">
+                        <i class="fas fa-calendar-alt mr-2"></i>Ngoài việc cung cấp miễn phí vận chuyển cho đơn hàng trên 10.000.000 Đồng và đảm bảo giao hàng nhanh chóng kể cả trong ngày nghĩ, bạn có thể thêm những ý tưởng sau để tạo thêm giá trị cho chương trình FreeShip của bạn:
+                    </time>
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">Giao hàng nhanh chóng kể cả là ngày nghĩ</div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item play blue">
+                        <a style="color:black" href="#"><i class="fas fa-play mr-2"></i>Đơn hàng trên 10.000.000 Đồng có thể được phân loại thành các hạng mục đặc biệt, và từng hạng mục sẽ có mức miễn phí vận chuyển riêng. Điều này giúp khách hàng lựa chọn sản phẩm mà họ muốn mua mà không phải lo lắng về phí vận chuyển.</a>
+                    </li>
+                    <li class="tag__item play blue">
+                        <a style="color:black" href="#"><i class="fas fa-play mr-2"></i>Tạo ra chương trình thành viên hoặc hệ thống tích điểm cho những khách hàng thường xuyên mua sắm với bạn. Những khách hàng này có thể nhận được miễn phí vận chuyển cho mọi đơn hàng hoặc các ưu đãi đặc biệt khi đạt mức đơn hàng tối thiểu.</a>
+                    </li>
+                    <li class="tag__item play blue">
+                        <a style="color:black" href="#"><i class="fas fa-play mr-2"></i>Hợp tác với các đối tác giao hàng để cung cấp dịch vụ giao hàng trong khoảng thời gian linh hoạt, bao gồm cả cuối tuần và ngày lễ. Điều này sẽ tạo ra sự linh hoạt cho khách hàng và tăng tính cạnh tranh của bạn trong việc cung cấp giao hàng nhanh chóng.</a>
+                    </li>
+                    <li class="tag__item play blue">
+                        <a href="#"><i class="fas fa-play mr-2"></i>Buy now</a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <article class="postcard light red">
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title red"><a href="#">Chấp nhận mọi hình thức thanh toán</a></h1>
+                <div class="postcard__subtitle small">
+                    <time datetime="2020-05-25 12:00:00">
+                    </time>
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">Chấp nhận mọi hình thức thanh toán là một cách tốt để tạo thuận lợi cho khách hàng và tăng khả năng mua sắm của họ. Dưới đây là một số ý tưởng để tối ưu hóa chính sách thanh toán của bạn:</div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item"><i class="fas fa-tag mr-2"></i>Thanh toán trực tuyến: Chấp nhận thanh toán bằng thẻ tín dụng/debit, ví điện tử, PayPal, ZaloPay, Apple Pay và các cổng thanh toán trực tuyến phổ biến khác. Đảm bảo rằng trang web của bạn có tích hợp bảo mật cao để bảo vệ thông tin thanh toán của khách hàng.</li>
+                    <li class="tag__item"><i class="fas fa-clock mr-2"></i>Chấp nhận chuyển khoản ngân hàng: Cho phép khách hàng thanh toán bằng cách chuyển khoản từ tài khoản ngân hàng của họ đến tài khoản của bạn. Cung cấp thông tin tài khoản ngân hàng và hướng dẫn thanh toán trên trang web của bạn.</li>
+                    <li class="tag__item play red">
+                        <a href="#"><i class="fas fa-play mr-2"></i>Buy now</a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <article class="postcard light green">
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title green"><a href="#">Cam kết chính hãng</a></h1>
+                <div class="postcard__subtitle small">
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">Cam kết chính hãng là một thông điệp quan trọng để tạo sự tin tưởng và thu hút khách hàng. Dưới đây là một số ý tưởng để bạn thể hiện cam kết chính hãng trong kinh doanh của mình:</div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item"><i class="fas fa-tag mr-2"></i>Đảm bảo sản phẩm: Cam kết bảo đảm sản phẩm của bạn trong một khoảng thời gian cụ thể. Nếu có bất kỳ vấn đề gì về sản phẩm sau khi mua, bạn cam kết sửa chữa hoặc đổi mới sản phẩm đó.</li>
+                    <li class="tag__item"><i class="fas fa-clock mr-2"></i>Mô tả sản phẩm chi tiết: Cung cấp thông tin chi tiết về sản phẩm trên trang web hoặc ứng dụng của bạn, bao gồm thông số kỹ thuật, nguồn gốc, và chứng nhận chính hãng. Hãy chắc chắn rằng mô tả sản phẩm là trung thực và chi tiết.</li>
+                    <li class="tag__item play green">
+                        <a href="#"><i class="fas fa-play mr-2"></i>Buy now</a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</section>
